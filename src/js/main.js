@@ -233,3 +233,7 @@ $('#statisticsModal').on('shown.bs.modal', function (e) {
     onlineRateChart.setOption(generalOption);
     onlineRateChart.setOption(onlineRateOption);
 });
+
+$('#river').on('click',function () {
+    $('#onlineModal').modal('show') ;
+});
