@@ -1,0 +1,190 @@
+/*查找按钮*/
+.search-btn {
+    display: inline-block;
+    width: 56px;
+    height: 52px;
+    cursor: pointer;
+    background: url('../img/btn-img/search-btn.png') no-repeat 4px -3px;
+}
+
+.search-btn span {
+    color: #9ce0e1;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-left: 15px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.search-btn span:hover {
+    color: #aaf4f5;
+}
+
+/*查找按钮*/
+
+/*菱形按钮*/
+.rhombus-btn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.rhombus-btn .rhombus-btn-left {
+    float: left;
+    display: inline-block;
+    width: 12px;
+    height: 27px;
+    background: url('../img/btn-img/rhombus-btn-left.png') no-repeat 0px 0px;
+}
+
+.rhombus-btn .rhombus-btn-body {
+    padding-left: 2px;
+    padding-right: 2px;
+    color: #9ce0e1;
+    font-size: 14px;
+    font-weight: 500;
+    float: left;
+    display: inline-block;
+    height: 27px;
+    background: url('../img/btn-img/rhombus-btn-body.png') no-repeat 0px 0px;
+}
+
+.rhombus-btn .rhombus-btn-body span {
+    display: inline-block;
+    margin-top: 4px;
+    margin-left: 0px;
+    color: #9ce0e1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.rhombus-btn-body span:hover {
+    color: #aaf4f5;
+}
+
+.rhombus-btn .rhombus-btn-right {
+    float: left;
+    display: inline-block;
+    width: 12px;
+    height: 27px;
+    background: url('../img/btn-img/rhombus-btn-right.png') no-repeat 0px 0px;
+}
+
+/*菱形按钮*/
+
+
+/*方形按钮*/
+.square-btn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.square-btn .square-btn-left {
+    float: left;
+    display: inline-block;
+    width: 6px;
+    height: 23px;
+    background: url('../img/btn-img/square-btn-left.png') no-repeat 0px 0px;
+}
+
+.square-btn .square-btn-body {
+    float: left;
+    display: inline-block;
+    height: 23px;
+    background: url('../img/btn-img/square-btn-body.png') no-repeat 0px 0px;
+}
+
+.square-btn .square-btn-body span {
+    display: inline-block;
+    margin-top: 3px;
+    margin-left: 0px;
+    color: #9ce0e1;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.square-btn-body span:hover {
+    color: #aaf4f5;
+}
+
+.square-btn .square-btn-right {
+    float: left;
+    display: inline-block;
+    width: 6px;
+    height: 23px;
+    background: url('../img/btn-img/square-btn-right.png') no-repeat 0px 0px;
+}
+
+/*方形按钮*/
+
+/*表格*/
+.hy-table-bordered {
+    border: 1px solid #9dfafd;
+}
+
+.hy-table-bordered > thead > tr > th,
+.hy-table-bordered > tbody > tr > th,
+.hy-table-bordered > tfoot > tr > th,
+.hy-table-bordered > thead > tr > td,
+.hy-table-bordered > tbody > tr > td,
+.hy-table-bordered > tfoot > tr > td {
+    border: 1px solid #9dfafd;
+}
+
+.hy-table-bordered > thead > tr > th,
+.hy-table-bordered > thead > tr > td {
+    border-bottom-width: 2px;
+}
+
+.hy-table-hover > tbody > tr:hover {
+    background-color: #0d798d;
+}
+
+.hy-table-bg > thead > tr {
+    background-color: #0a2f4a;
+}
+
+/*表格*/
+
+/*input样式修改*/
+::-webkit-input-placeholder {
+    color: #29dde2;
+    opacity: 0.5;
+}
+
+input {
+    padding: 6px 12px;
+    box-sizing: border-box;
+    background-color: #0a2f4a;
+    border-radius: 12px;
+    border: 1px solid #20728a;
+    box-shadow: 0 0 10px #436fa1;
+    color: #aaf4f5;
+    display: inline-block;
+    outline: 0;
+    width: 100%;
+}
+/*input样式修改*/
+
+/*弹框修改*/
+.hy-modal-content{
+    /*background-color: #0e507c*/
+    background-color:rgba(8, 48, 74,0.98);
+}
+.hy-modal-header{
+    border-bottom-color: rgba(28, 158, 159, 0.5);
+}
+.hy-modal-header > button > span{
+    color: #def0f5;
+}
+/*scrollbar*/
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-body::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #20728a;
+}
+.modal-body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(28, 158, 159, 0.5);
+}
