@@ -174,7 +174,9 @@ dd input[type="text"]{
     width: 120px;
 }
 /*input样式修改*/
-
+.modal-dialog{
+    margin-top: 120px;
+}
 /*弹框修改*/
 .hy-modal-content{
     /*background-color: #0e507c*/
