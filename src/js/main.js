@@ -259,13 +259,9 @@ var commandNodes = [
 var commandSetting = {
   callback: {
     onClick: function (event, treeId, treeNode, clickFlag) {
-      console.log(treeNode.name);
       if (treeNode.name === '火点定位') {
-
       } else if (treeNode.name === '指挥灭火') {
-        extinguishingFire();
       } else if (treeNode.name === '案情分析') {
-
       }
     }
   }
