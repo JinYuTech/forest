@@ -2,20 +2,22 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="ie=edge" http-equiv="x-ua-compatible">
-  <title></title>
-  <meta content="" name="description">
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="site.webmanifest" rel="manifest">
-  <link href="icon.png" rel="apple-touch-icon">
-  <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="site.webmanifest" rel="manifest">
+    <link href="icon.png" rel="apple-touch-icon">
+    <link href="css/main.css" rel="stylesheet">
     <link href="css/zTreeStyle.css" rel="stylesheet">
 
     <link href="css/component.css" rel="stylesheet">
-    <link href="http://172.16.16.121:8080/arcgis_js_api/library/4.10/esri/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+    <!--<link href="http://172.16.16.121:8080/arcgis_js_api/library/4.10/esri/css/main.css" rel="stylesheet">-->
 </head>
 
 <body class="container">
@@ -23,381 +25,384 @@
      style="z-index: -1;width:100%;height: 100%;position: absolute;top: 0;right: 0;bottom: 0;left: 0;">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-  your browser</a> to improve your experience and security.</p>
+    your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
 <header class="header">
-  <img src="img/header_bg.png" style="max-width: 100%">
+    <img src="img/header_bg.png" style="max-width: 100%">
 </header>
 
 <div class="main-container">
 
-  <aside class="left-aside">
-    <div class="aside-content">
-      <div class="t-line-box">
-        <div class="t-line-box-title">
-          <div class="aside left"></div>
-          <span class="text">基础数据</span>
-          <div class="aside right"></div>
-        </div>
+    <aside class="left-aside">
+        <div class="aside-content">
+            <div class="t-line-box">
+                <div class="t-line-box-title">
+                    <div class="aside left"></div>
+                    <span class="text">基础数据</span>
+                    <div class="aside right"></div>
+                </div>
 
-        <div class="t-line-box-content">
-            <div style="display: flex;justify-content:space-around;align-items:center;">
-                <div class="rhombus-btn">
-                    <span class="rhombus-btn-left"></span>
-                    <div class="rhombus-btn-body basicData" >
-                        <span>行政区划</span>
+                <div class="t-line-box-content">
+                    <div style="display: flex;justify-content:space-around;align-items:center;">
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData">
+                                <span>行政区划</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData">
+                                <span>防火设施</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div id="river" class="rhombus-btn-body basicData">
+                                <span>水系河流</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData" data-toggle="modal" data-target="#firePointModal">
+                                <span>物资信息</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
                     </div>
-                    <span class="rhombus-btn-right"></span>
-                </div>
-                <div class="rhombus-btn">
-                    <span class="rhombus-btn-left"></span>
-                    <div class="rhombus-btn-body basicData">
-                        <span>防火设施</span>
+                    <div class="padding-sm" style="display: flex;justify-content:space-around;align-items:center;">
+                        <div style="flex: 1 1 100%">
+                            <input type="text" placeholder="输入名称定位查询">
+                        </div>
+                        <div style="flex:1 0 80px;" class="search-btn">
+                            <span>查询</span>
+                        </div>
                     </div>
-                    <span class="rhombus-btn-right"></span>
-                </div>
-                <div class="rhombus-btn">
-                    <span class="rhombus-btn-left"></span>
-                    <div id="river" class="rhombus-btn-body basicData" >
-                        <span>水系河流</span>
+                    <div class="padding-sm">
+                        <div id="administrative">
+                            <ul id="treeDemo" class="ztree"></ul>
+                        </div>
+                        <div id="facility">
+                            <ul id="fireproofingTree" class="ztree"></ul>
+                        </div>
                     </div>
-                    <span class="rhombus-btn-right"></span>
                 </div>
-                <div class="rhombus-btn">
-                    <span class="rhombus-btn-left"></span>
-                    <div class="rhombus-btn-body basicData" data-toggle="modal" data-target="#firePointModal">
-                        <span>物资信息</span>
-                    </div>
-                    <span class="rhombus-btn-right"></span>
-                </div>
+
+                <i class="corners t-t-line"></i>
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
             </div>
-            <div class="padding-sm" style="display: flex;justify-content:space-around;align-items:center;">
-                <div style="flex: 1 1 100%">
-                    <input type="text" placeholder="输入名称定位查询">
-                </div>
-                <div style="flex:1 0 80px;" class="search-btn">
-                    <span>查询</span>
-                </div>
-            </div>
-            <div class="padding-sm">
-                <div id="administrative">
-                    <ul id="treeDemo" class="ztree"></ul>
-                </div>
-                <div id="facility" >
-                    <ul id="fireproofingTree" class="ztree"></ul>
-                </div>
+        </div>
+
+        <div class="aside-content" style="margin-bottom: 8px;">
+            <div class="t-line-box">
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
             </div>
         </div>
+    </aside>
 
-        <i class="corners t-t-line"></i>
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
-    </div>
+    <div class="center-content">
 
-    <div class="aside-content" style="margin-bottom: 8px;">
-      <div class="t-line-box">
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
-    </div>
-  </aside>
+        <div id="map" style="display: flex;flex: 1;margin: 8px">
 
-  <div class="center-content">
-
-    <div id="map" style="display: flex;flex: 1;margin: 8px">
-
-    </div>
-
-    <div class="nav-box">
-      <div class="t-line-box">
-        <i class="corners t-t-line"></i>
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-        <div class="nav-box-container">
-          <div class="nav-box-item">
-            <img alt="应急" src="img/ic_emergency.png">
-            <span class="text-title">应急</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="队伍" src="img/ic_group.png">
-            <span class="text-title">队伍</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="物资" src="img/ic_substance.png">
-            <span class="text-title">物资</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="巡检" src="img/ic_inspector.png">
-            <span class="text-title">巡检</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="保护资源" src="img/ic_resource.png">
-            <span class="text-title">保护资源</span>
-          </div>
         </div>
 
-      </div>
-    </div>
-  </div>
+        <div class="nav-box">
+            <div class="t-line-box">
+                <i class="corners t-t-line"></i>
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+                <div class="nav-box-container">
+                    <div class="nav-box-item">
+                        <img alt="应急" src="img/ic_emergency.png">
+                        <span class="text-title">应急</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="队伍" src="img/ic_group.png">
+                        <span class="text-title">队伍</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="物资" src="img/ic_substance.png">
+                        <span class="text-title">物资</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="巡检" src="img/ic_inspector.png">
+                        <span class="text-title">巡检</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="保护资源" src="img/ic_resource.png">
+                        <span class="text-title">保护资源</span>
+                    </div>
+                </div>
 
-  <aside class="right-aside" style="margin-right: 8px">
-    <div class="aside-content">
-      <div class="t-line-box">
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
-    </div>
-
-    <div class="aside-content" style="margin-bottom: 8px;">
-      <div class="t-line-box">
-        <div class="t-line-box-title">
-          <div class="aside left"></div>
-          <span class="text">灭火指挥</span>
-          <div class="aside right"></div>
+            </div>
         </div>
-        <!--<div class="t-line-box-content">-->
-            <!--<div class="flex-row" style="justify-content: space-between">-->
-                <!--<div>-->
-                    <!--<div class="rhombus-btn">-->
-                        <!--<span class="rhombus-btn-left"></span>-->
-                        <!--<div class="rhombus-btn-body basicData" >-->
-                            <!--<span>新建</span>-->
-                        <!--</div>-->
-                        <!--<span class="rhombus-btn-right"></span>-->
-                    <!--</div>-->
-                    <!--<div class="rhombus-btn">-->
-                        <!--<span class="rhombus-btn-left"></span>-->
-                        <!--<div class="rhombus-btn-body basicData">-->
-                            <!--<span>打开</span>-->
-                        <!--</div>-->
-                        <!--<span class="rhombus-btn-right"></span>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div>-->
-                    <!--<div class="rhombus-btn">-->
-                        <!--<span class="rhombus-btn-left"></span>-->
-                        <!--<div class="rhombus-btn-body basicData" >-->
-                            <!--<span>导入/出</span>-->
-                        <!--</div>-->
-                        <!--<span class="rhombus-btn-right"></span>-->
-                    <!--</div>-->
-                    <!--<div class="rhombus-btn">-->
-                        <!--<span class="rhombus-btn-left"></span>-->
-                        <!--<div class="rhombus-btn-body basicData">-->
-                            <!--<span>应急预案</span>-->
-                        <!--</div>-->
-                        <!--<span class="rhombus-btn-right"></span>-->
-                    <!--</div>-->
-                    <!--<div class="rhombus-btn">-->
-                        <!--<span class="rhombus-btn-left"></span>-->
-                        <!--<div class="rhombus-btn-body basicData">-->
-                            <!--<span>灭火指挥</span>-->
-                        <!--</div>-->
-                        <!--<span class="rhombus-btn-right"></span>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="padding-sm">-->
-                <!--<ul id="commandTree" class="ztree"></ul>-->
-            <!--</div>-->
-            <!--<div class="flex-row" style="justify-content: space-between">-->
-                <!--<div class="rhombus-btn">-->
-                    <!--<span class="rhombus-btn-left"></span>-->
-                    <!--<div class="rhombus-btn-body basicData" >-->
-                        <!--<span>火场信息</span>-->
-                    <!--</div>-->
-                    <!--<span class="rhombus-btn-right"></span>-->
-                <!--</div>-->
-                <!--<div class="rhombus-btn">-->
-                    <!--<span class="rhombus-btn-left"></span>-->
-                    <!--<div class="rhombus-btn-body basicData">-->
-                        <!--<span>火场标绘</span>-->
-                    <!--</div>-->
-                    <!--<span class="rhombus-btn-right"></span>-->
-                <!--</div>-->
-                <!--<div class="rhombus-btn">-->
-                    <!--<span class="rhombus-btn-left"></span>-->
-                    <!--<div class="rhombus-btn-body basicData">-->
-                        <!--<span>其他标绘，火行为预测</span>-->
-                    <!--</div>-->
-                    <!--<span class="rhombus-btn-right"></span>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="padding-sm">-->
-                <!--<dl class="dl-horizontal" style="margin-bottom: 0;">-->
-                    <!--<dt>所在县市</dt>-->
-                    <!--<dd>成都市</dd>-->
-                    <!--<dt>起火时间</dt>-->
-                    <!--<dd><input name="small" type="date"/></dd>-->
-                    <!--<dt>灭火时间</dt>-->
-                    <!--<dd><input name="small" type="date"/></dd>-->
-                    <!--<dt>过火面积</dt>-->
-                    <!--<dd><input name="small" type="text"/>公顷</dd>-->
-                    <!--<dt>过火林地面积</dt>-->
-                    <!--<dd><input name="small" type="text"/>公顷</dd>-->
-                    <!--<dt>受害森林面积</dt>-->
-                    <!--<dd><input name="small" type="text"/>公顷</dd>-->
-                    <!--<dt>当前状态</dt>-->
-                    <!--<dd>未上传</dd>-->
-                <!--</dl>-->
-            <!--</div>-->
-            <!--<div class="flex-row" style="justify-content: space-around ">-->
-                <!--<div class="square-btn">-->
-                    <!--<span class="square-btn-left"></span>-->
-                    <!--<div class="square-btn-body">-->
-                        <!--<span>上传</span>-->
-                    <!--</div>-->
-                    <!--<span class="square-btn-right"></span>-->
-                <!--</div>-->
-                <!--<div class="square-btn">-->
-                    <!--<span class="square-btn-left"></span>-->
-                    <!--<div class="square-btn-body">-->
-                        <!--<span>保存</span>-->
-                    <!--</div>-->
-                    <!--<span class="square-btn-right"></span>-->
-                <!--</div>-->
-                <!--<div class="square-btn">-->
-                    <!--<span class="square-btn-left"></span>-->
-                    <!--<div class="square-btn-body">-->
-                        <!--<span>详情</span>-->
-                    <!--</div>-->
-                    <!--<span class="square-btn-right"></span>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
     </div>
-  </aside>
 
-  <!--弹窗开始-->
-  <!-- 护林员在线状态 Modal -->
-  <div class="modal fade" id="onlineModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content hy-modal-content">
-        <div class="modal-header hy-modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">护林员在线状态</h4>
+    <aside class="right-aside" style="margin-right: 8px">
+        <div class="aside-content">
+            <div class="t-line-box">
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+            </div>
         </div>
-        <div class="modal-body">
-          <div style="display: flex;flex-direction: row;align-items:center;margin-bottom:10px;">
-            <span style="display: inline-block;margin-right:10px;">开始时间</span>
-            <!--<div style="display: inline-block;width: 200px;">-->
-              <input value="2019-01-14" style="width: 200px;height: 30px;" type="date">
-            <!--</div>-->
-            <span style="display: inline-block;margin-left: 10px;margin-right:10px;">结束时间</span>
-            <!--<div style="display: inline-block;width: 200px;">-->
-              <input value="2019-01-15" style="width: 200px;height: 30px;" type="date">
-            <!--</div>-->
-            <span style="margin-left:10px;" class="square-btn">
+
+        <div class="aside-content" style="margin-bottom: 8px;">
+            <div class="t-line-box">
+                <div class="t-line-box-title">
+                    <div class="aside left"></div>
+                    <span class="text">灭火指挥</span>
+                    <div class="aside right"></div>
+                </div>
+                <div class="t-line-box-content">
+                    <div class="flex-row" style="justify-content: space-between">
+                        <div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body basicData">
+                                    <span>新建</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body basicData">
+                                    <span>打开</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body basicData">
+                                    <span>导入/出</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body basicData">
+                                    <span>应急预案</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body basicData">
+                                    <span>灭火指挥</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="padding-sm">
+                        <ul id="commandTree" class="ztree"></ul>
+                    </div>
+                    <div class="flex-row" style="justify-content: space-between">
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData">
+                                <span>火场信息</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData">
+                                <span>火场标绘</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData">
+                                <span>其他标绘，火行为预测</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                    </div>
+                    <div class="padding-sm">
+                        <dl class="dl-horizontal" style="margin-bottom: 0;">
+                            <dt>所在县市</dt>
+                            <dd>成都市</dd>
+                            <dt>起火时间</dt>
+                            <dd><input name="small" type="date"/></dd>
+                            <dt>灭火时间</dt>
+                            <dd><input name="small" type="date"/></dd>
+                            <dt>过火面积</dt>
+                            <dd><input name="small" type="text"/>公顷</dd>
+                            <dt>过火林地面积</dt>
+                            <dd><input name="small" type="text"/>公顷</dd>
+                            <dt>受害森林面积</dt>
+                            <dd><input name="small" type="text"/>公顷</dd>
+                            <dt>当前状态</dt>
+                            <dd>未上传</dd>
+                        </dl>
+                    </div>
+                    <div class="flex-row" style="justify-content: space-around ">
+                        <div class="square-btn">
+                            <span class="square-btn-left"></span>
+                            <div class="square-btn-body">
+                                <span>上传</span>
+                            </div>
+                            <span class="square-btn-right"></span>
+                        </div>
+                        <div class="square-btn">
+                            <span class="square-btn-left"></span>
+                            <div class="square-btn-body">
+                                <span>保存</span>
+                            </div>
+                            <span class="square-btn-right"></span>
+                        </div>
+                        <div class="square-btn">
+                            <span class="square-btn-left"></span>
+                            <div class="square-btn-body">
+                                <span>详情</span>
+                            </div>
+                            <span class="square-btn-right"></span>
+                        </div>
+                    </div>
+                </div>
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+            </div>
+        </div>
+    </aside>
+
+    <!--弹窗开始-->
+    <!-- 护林员在线状态 Modal -->
+    <div class="modal fade" id="onlineModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content hy-modal-content">
+                <div class="modal-header hy-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">护林员在线状态</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="display: flex;flex-direction: row;align-items:center;margin-bottom:10px;">
+                        <span style="display: inline-block;margin-right:10px;">开始时间</span>
+                        <!--<div style="display: inline-block;width: 200px;">-->
+                        <input value="2019-01-14" style="width: 200px;height: 30px;" type="date">
+                        <!--</div>-->
+                        <span style="display: inline-block;margin-left: 10px;margin-right:10px;">结束时间</span>
+                        <!--<div style="display: inline-block;width: 200px;">-->
+                        <input value="2019-01-15" style="width: 200px;height: 30px;" type="date">
+                        <!--</div>-->
+                        <span style="margin-left:10px;" class="square-btn">
               <span class="square-btn-left"></span>
               <div class="square-btn-body">
                 <span>查询</span>
               </div>
               <span class="square-btn-right"></span>
             </span>
-            <!--<button type="button" class="btn btn-sm btn-default">查询</button>-->
-          </div>
-          <div id="main" style="width: 880px;height:400px;"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- 统计 Modal -->
-  <div class="modal fade" id="statisticsModal" tabindex="-1" role="dialog" aria-labelledby="statisticsModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content hy-modal-content">
-        <div class="modal-header hy-modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="statisticsModalLabel">出勤统计</h4>
-        </div>
-        <div class="modal-body" style="max-height: 650px;overflow-y: auto">
-          <div style="display: flex;flex-direction: row;align-items: center;justify-content:space-between">
-            <h5>四川省护林员在线情况实时统计</h5>
-            <div>
-              <div class="square-btn">
-                <span class="square-btn-left"></span>
-                <div class="square-btn-body">
-                  <span>开始统计</span>
+                        <!--<button type="button" class="btn btn-sm btn-default">查询</button>-->
+                    </div>
+                    <div id="main" style="width: 880px;height:400px;"></div>
                 </div>
-                <span class="square-btn-right"></span>
-              </div>
-              <div class="square-btn">
-                <span class="square-btn-left"></span>
-                <div class="square-btn-body">
-                  <span>导出</span>
-                </div>
-                <span class="square-btn-right"></span>
-              </div>
             </div>
-          </div>
-          <div class="table-responsive">
-            <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg">
-              <thead>
-              <tr>
-                <th>区划代码</th>
-                <th>区域名称</th>
-                <th>总人数</th>
-                <th>在线人数</th>
-                <th>界内人数</th>
-                <th>界外人数</th>
-                <th>在线率</th>
-              </tr>
-              </thead>
-              <tbody id="tableData"></tbody>
-            </table>
-          </div>
-          <div id="onlineChart" style="width: 870px;height:400px;"></div>
-          <div id="onlineRateChart" style="width: 870px;height:400px;"></div>
         </div>
-      </div>
     </div>
-  </div>
+    <!-- 统计 Modal -->
+    <div class="modal fade" id="statisticsModal" tabindex="-1" role="dialog" aria-labelledby="statisticsModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content hy-modal-content">
+                <div class="modal-header hy-modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="statisticsModalLabel">出勤统计</h4>
+                </div>
+                <div class="modal-body" style="max-height: 650px;overflow-y: auto">
+                    <div style="display: flex;flex-direction: row;align-items: center;justify-content:space-between">
+                        <h5>四川省护林员在线情况实时统计</h5>
+                        <div>
+                            <div class="square-btn">
+                                <span class="square-btn-left"></span>
+                                <div class="square-btn-body">
+                                    <span>开始统计</span>
+                                </div>
+                                <span class="square-btn-right"></span>
+                            </div>
+                            <div class="square-btn">
+                                <span class="square-btn-left"></span>
+                                <div class="square-btn-body">
+                                    <span>导出</span>
+                                </div>
+                                <span class="square-btn-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg">
+                            <thead>
+                            <tr>
+                                <th>区划代码</th>
+                                <th>区域名称</th>
+                                <th>总人数</th>
+                                <th>在线人数</th>
+                                <th>界内人数</th>
+                                <th>界外人数</th>
+                                <th>在线率</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tableData"></tbody>
+                        </table>
+                    </div>
+                    <div id="onlineChart" style="width: 870px;height:400px;"></div>
+                    <div id="onlineRateChart" style="width: 870px;height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--起火点 Modal -->
     <div class="modal fade" id="firePointModal" tabindex="-1" role="dialog" aria-labelledby="firePointLabel">
         <div class="modal-dialog modal-md" role="document" style="margin-top: 120px;">
             <div class="modal-content hy-modal-content">
                 <div class="modal-header hy-modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="firePointLabel">着火点详情</h4>
                 </div>
                 <div class="modal-body">
                     <div class="flex-row" style="align-items: flex-start">
                         <div style="width: 350px; height: 350px;flex-shrink:0">
-                            <img src="img/fire.jpg" width="100%" height="100%">
+                            <img src="img/fire.png" width="100%" height="100%">
                         </div>
                         <div style="padding-left: 20px;">
                             <ul class="list-unstyled">
@@ -417,7 +422,9 @@
 </div>
 
 <script src="js/jquery-1.12.4.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 <!--<script src="http://localhost:8080/arcgis_js_api/library/4.10/init.js" type="text/javascript"></script>-->
 <script src="js/main.js"></script>
 <script src="js/jquery.ztree.core.js"></script>
