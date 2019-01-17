@@ -66,7 +66,7 @@
                   </div>
                   <div class="rhombus-btn">
                       <span class="rhombus-btn-left"></span>
-                      <div class="rhombus-btn-body basicData" data-toggle="modal" data-target="#statisticsModal">
+                      <div class="rhombus-btn-body basicData">
                           <span>物资信息</span>
                       </div>
                       <span class="rhombus-btn-right"></span>
@@ -114,7 +114,7 @@
                         <div>
                             <div class="rhombus-btn">
                                 <span class="rhombus-btn-left"></span>
-                                <div class="rhombus-btn-body">
+                                <div class="rhombus-btn-body" data-toggle="modal" data-target="#statisticsModal">
                                     <span>统计</span>
                                 </div>
                                 <span class="rhombus-btn-right"></span>
@@ -172,13 +172,14 @@
         </div>
     </aside>
 
-    <div class="center-content">
+    <div class="center-content" style="position: relative;">
 
-        <div id="map" style="display: flex;flex: 1;margin: 8px">
+      <div id="map" style="position: absolute;top: 0;bottom: 94px;left: 0;right: 0;margin: 8px">
 
-        </div>
+      </div>
+      <img id="mock-img" src="img/ic_map_water.jpg" style="z-index:1000;width: 100%;height: 100%;display: flex;flex: 0;visibility: hidden">
 
-        <div class="nav-box">
+      <div class="nav-box">
             <div class="t-line-box">
                 <i class="corners t-t-line"></i>
                 <i class="corners t-l-line"></i>

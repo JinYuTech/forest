@@ -116,7 +116,7 @@
     map.add(layer);
 
     //火点定位
-    document.getElementById('location-fire').addEventListener('click',
+    document.getElementById('commandTree_2_a').addEventListener('click',
       function () {
         layer.removeAll();
         layer.add(new Graphic({
@@ -151,7 +151,7 @@
       });
 
     //指挥灭火
-    document.getElementById('extinguishing-fire').addEventListener('click',
+    document.getElementById('commandTree_3_a').addEventListener('click',
       function () {
 
         layer.removeAll();
@@ -296,7 +296,7 @@
       });
     //案情分析
 
-    document.getElementById('fire-analysis').addEventListener('click',
+    document.getElementById('commandTree_4_a').addEventListener('click',
       function () {
 
       });
