@@ -35,6 +35,7 @@ var facilityNodes = [
     }
 ];
 $(document).ready(function(){
+    console.log("开始渲染zTreeObj");
     zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
     var nodes = zTreeObj.getNodes();
     if (nodes.length>0) {
@@ -236,4 +237,36 @@ $('#statisticsModal').on('shown.bs.modal', function (e) {
 
 $('#river').on('click',function () {
     $('#onlineModal').modal('show') ;
+});
+
+//======================灭火指挥start by_Dylan ========================
+var commandNodes = [
+    {name:"龙泉五台山", open:true, children:[
+            {name:"火点定位"},
+            {name:"指挥灭火"},
+            {name:"案情分析"}]
+    }
+];
+var commandSetting = {
+    callback:{
+        onClick:function (event, treeId, treeNode, clickFlag){
+            console.log(treeNode.name);
+            if(treeNode.name === '火点定位'){
+                //TODO 定位
+            }else if(treeNode.name === '指挥灭火'){
+
+            }else if(treeNode.name === '案情分析'){
+
+            }
+        }
+    }
+};
+var commandTreeObj ;
+$(document).ready(function(){
+    console.log("开始渲染command");
+    commandTreeObj = $.fn.zTree.init($("#commandTree"), commandSetting, commandNodes);
+    var c_nodes = commandTreeObj.getNodes();
+    if (c_nodes.length>0) {
+        commandTreeObj.selectNode(c_nodes[0]);
+    }
 });

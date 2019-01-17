@@ -176,6 +176,121 @@
 
     <div class="aside-content" style="margin-bottom: 8px;">
       <div class="t-line-box">
+        <div class="t-line-box-title">
+          <div class="aside left"></div>
+          <span class="text">灭火指挥</span>
+          <div class="aside right"></div>
+        </div>
+        <div class="t-line-box-content">
+            <div class="flex-row" style="justify-content: space-between">
+                <div>
+                    <div class="rhombus-btn">
+                        <span class="rhombus-btn-left"></span>
+                        <div class="rhombus-btn-body basicData" >
+                            <span>新建</span>
+                        </div>
+                        <span class="rhombus-btn-right"></span>
+                    </div>
+                    <div class="rhombus-btn">
+                        <span class="rhombus-btn-left"></span>
+                        <div class="rhombus-btn-body basicData">
+                            <span>打开</span>
+                        </div>
+                        <span class="rhombus-btn-right"></span>
+                    </div>
+                </div>
+                <div>
+                    <div class="rhombus-btn">
+                        <span class="rhombus-btn-left"></span>
+                        <div class="rhombus-btn-body basicData" >
+                            <span>导入/出</span>
+                        </div>
+                        <span class="rhombus-btn-right"></span>
+                    </div>
+                    <div class="rhombus-btn">
+                        <span class="rhombus-btn-left"></span>
+                        <div class="rhombus-btn-body basicData">
+                            <span>应急预案</span>
+                        </div>
+                        <span class="rhombus-btn-right"></span>
+                    </div>
+                    <div class="rhombus-btn">
+                        <span class="rhombus-btn-left"></span>
+                        <div class="rhombus-btn-body basicData">
+                            <span>灭火指挥</span>
+                        </div>
+                        <span class="rhombus-btn-right"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="padding-sm">
+                <ul id="commandTree" class="ztree"></ul>
+            </div>
+            <div class="flex-row" style="justify-content: space-between">
+                <div class="rhombus-btn">
+                    <span class="rhombus-btn-left"></span>
+                    <div class="rhombus-btn-body basicData" >
+                        <span>火场信息</span>
+                    </div>
+                    <span class="rhombus-btn-right"></span>
+                </div>
+                <div class="rhombus-btn">
+                    <span class="rhombus-btn-left"></span>
+                    <div class="rhombus-btn-body basicData">
+                        <span>火场标绘</span>
+                    </div>
+                    <span class="rhombus-btn-right"></span>
+                </div>
+                <div class="rhombus-btn">
+                    <span class="rhombus-btn-left"></span>
+                    <div class="rhombus-btn-body basicData">
+                        <span>其他标绘，火行为预测</span>
+                    </div>
+                    <span class="rhombus-btn-right"></span>
+                </div>
+            </div>
+            <div class="padding-sm">
+                <dl class="dl-horizontal" style="margin-bottom: 0;">
+                    <dt>所在县市</dt>
+                    <dd>成都市</dd>
+                    <dt>起火时间</dt>
+                    <dd><input name="small" type="date"/></dd>
+                    <dt>灭火时间</dt>
+                    <dd><input name="small" type="date"/></dd>
+                    <dt>过火面积</dt>
+                    <dd><input name="small" type="text"/>公顷</dd>
+                    <dt>过火林地面积</dt>
+                    <dd><input name="small" type="text"/>公顷</dd>
+                    <dt>受害森林面积</dt>
+                    <dd><input name="small" type="text"/>公顷</dd>
+                    <dt>当前状态</dt>
+                    <dd>未上传</dd>
+                </dl>
+            </div>
+            <div class="flex-row" style="justify-content: space-around ">
+                <div class="square-btn">
+                    <span class="square-btn-left"></span>
+                    <div class="square-btn-body">
+                        <span>上传</span>
+                    </div>
+                    <span class="square-btn-right"></span>
+                </div>
+                <div class="square-btn">
+                    <span class="square-btn-left"></span>
+                    <div class="square-btn-body">
+                        <span>保存</span>
+                    </div>
+                    <span class="square-btn-right"></span>
+                </div>
+                <div class="square-btn">
+                    <span class="square-btn-left"></span>
+                    <div class="square-btn-body">
+                        <span>详情</span>
+                    </div>
+                    <span class="square-btn-right"></span>
+                </div>
+            </div>
+        </div>
         <i class="corners t-l-line"></i>
         <i class="corners l-t-line"></i>
         <i class="corners t-r-line"></i>
@@ -265,8 +380,8 @@
               <tbody id="tableData"></tbody>
             </table>
           </div>
-          <div id="onlineChart" style="width: 800px;height:400px;"></div>
-          <div id="onlineRateChart" style="width: 800px;height:400px;"></div>
+          <div id="onlineChart" style="width: 880px;height:400px;"></div>
+          <div id="onlineRateChart" style="width: 880px;height:400px;"></div>
         </div>
       </div>
     </div>

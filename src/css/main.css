@@ -480,3 +480,19 @@ body {
     padding-left: 5px;
     padding-right: 5px;
 }
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+.t-line-box-content {
+  min-height: 360px;
+  overflow-y: auto;
+}
+.dl-horizontal dt {
+  width: 120px;
+}
+.dl-horizontal dd{
+  margin-left: 125px;
+  margin-bottom: 3px;
+}
