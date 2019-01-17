@@ -163,29 +163,37 @@ input {
     outline: 0;
     width: 100%;
 }
+
 /*input样式修改*/
 
-/*弹框修改*/
-.hy-modal-content{
-    /*background-color: #0e507c*/
-    background-color:rgba(8, 48, 74,0.98);
+/*select样式修改*/
+select {
+    padding: 0px 12px;
+    box-sizing: border-box;
+    background-color: #0a2f4a;
+    border-radius: 12px;
+    border: 1px solid #20728a;
+    box-shadow: 0 0 10px #436fa1;
+    color: #aaf4f5;
+    display: inline-block;
+    outline: 0;
+    width: 100%;
 }
-.hy-modal-header{
+
+/*select样式修改*/
+
+/*弹框修改*/
+.hy-modal-content {
+    /*background-color: #0e507c*/
+    background-color: rgba(8, 48, 74, 0.98);
+}
+
+.hy-modal-header {
     border-bottom-color: rgba(28, 158, 159, 0.5);
 }
-.hy-modal-header > button > span{
+
+.hy-modal-header > button > span {
     color: #def0f5;
 }
+
 /*弹框修改*/
-/*scrollbar*/
-.modal-body::-webkit-scrollbar {
-    width: 8px;
-}
-.modal-body::-webkit-scrollbar-track {
-    border-radius: 5px;
-    background-color: #20728a;
-}
-.modal-body::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: rgba(28, 158, 159, 0.5);
-}
