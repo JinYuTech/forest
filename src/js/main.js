@@ -12,9 +12,6 @@ var setting = {
       } else if (treeNode.name === '水窖') {
         $('#mock-img').attr({src: 'img/ic_map_water.jpg'}).css('visibility', 'visible');
       }
-      if (treeNode.name === '龙泉驿(5)') {
-        document.getElementById('rangerName').innerText = '李泽宇; 王世伟; 刁静文; 张文聪; 牟健翔; 邓志富;';
-      }
     }
   }
 };
@@ -46,7 +43,6 @@ var facilityNodes = [
   }
 ];
 $(document).ready(function () {
-  console.log('开始渲染zTreeObj');
   zTreeObj = $.fn.zTree.init($('#treeDemo'), setting, zNodes);
   var nodes = zTreeObj.getNodes();
   if (nodes.length > 0) {
@@ -62,7 +58,6 @@ $(document).ready(function () {
 });
 
 $('.basicData').click(function (data) {
-  console.log($(this).context.innerText, '点击事件');
   var category = $(this).context.innerText;
   if (category === '行政区划') {
     $('#img').attr({src: 'img/bg_1.jpg'}); //TODO 看具体演示修改修改
@@ -204,7 +199,6 @@ for (var j = 0; j < statisticsData.length; j++) {
   tbodyhtml += '<tr><td>' + statisticsData[j].code + '</td><td>' + statisticsData[j].area + '</td><td>' + statisticsData[j].total + '</td><td>' +
     statisticsData[j].online + '</td><td>' + statisticsData[j].borderIn + '</td><td>' + statisticsData[j].borderOut + '</td><td>'
     + statisticsData[j].onlineRate + '% </td></tr>';
-  console.log(statisticsData[j]);
 }
 
 //护林人员在线状态
@@ -268,7 +262,6 @@ var commandSetting = {
 };
 var commandTreeObj;
 $(document).ready(function () {
-  console.log('开始渲染command');
   commandTreeObj = $.fn.zTree.init($('#commandTree'), commandSetting, commandNodes);
   var c_nodes = commandTreeObj.getNodes();
   if (c_nodes.length > 0) {
@@ -306,7 +299,6 @@ var rangerNodes = [
   }
 ];
 $(document).ready(function () {
-  console.log('开始渲染zTreeObj');
   zTreeObj = $.fn.zTree.init($('#treeDemo'), setting, zNodes);
   var nodes = zTreeObj.getNodes();
   if (nodes.length > 0) {
@@ -340,6 +332,26 @@ $(document).ready(function () {
 
 //======================弹框短信群发护林员树end by_Dylan ==========================
 
+
+var rangermessage = {
+  callback: {
+    onClick: function (event, treeId, treeNode, clickFlag) {
+    },
+    onCheck: function (evenevent, treeId, treeNode, clickFlagt) {
+      if (treeNode.name === '龙泉驿(5)') {
+        document.getElementById('rangerName').innerText = '李泽宇; 王世伟; 刁静文; 张文聪; 牟健翔; 邓志富;';
+      }
+    }
+  },
+  check: {
+    enable: true,
+    chkStyle: 'checkbox',
+    chkboxType: {'Y': 'ps', 'N': 'ps'},
+    autoCheckTrigger: true
+  }
+
+};
+
 // var rangerTreeObj;
 var rangerNodes = [
   {
@@ -369,14 +381,13 @@ var rangerNodes = [
 ];
 
 $(document).ready(function () {
-  console.log('开始渲染zTreeObj');
   zTreeObj = $.fn.zTree.init($('#treeDemo'), setting, zNodes);
   var nodes = zTreeObj.getNodes();
   if (nodes.length > 0) {
     zTreeObj.selectNode(nodes[0].children[0]);
   }
 
-  rangerTreeObj = $.fn.zTree.init($('#messageRangerListTree'), setting, rangerNodes);
+  rangerTreeObj = $.fn.zTree.init($('#messageRangerListTree'), rangermessage, rangerNodes);
   var f_nodes = rangerTreeObj.getNodes();
   if (f_nodes.length > 0) {
     rangerTreeObj.selectNode(f_nodes[0].children[0]);
