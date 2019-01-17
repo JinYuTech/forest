@@ -13,9 +13,6 @@ var setting = {
                 $("#img").attr({ src: "img/bg_3.jpg" });
 
             }
-            if (treeNode.name ==="龙泉驿(5)") {
-                document.getElementById("rangerName").innerText = "李泽宇; 王世伟; 刁静文; 张文聪; 牟健翔; 邓志富;"
-            }
         }
     }
 };
@@ -334,6 +331,30 @@ $(document).ready(function(){
 
 //======================弹框短信群发护林员树end by_Dylan ==========================
 
+
+var rangermessage = {
+    callback:{
+        onClick:function (event, treeId, treeNode, clickFlag){
+            console.log(event,"点击事件");
+            console.log("treeNode",treeNode)
+        },
+        onCheck: function (evenevent, treeId, treeNode, clickFlagt) {
+            console.log(event,"复选框选中");
+            if (treeNode.name ==="龙泉驿(5)") {
+                console.log(treeNode);
+                document.getElementById("rangerName").innerText = "李泽宇; 王世伟; 刁静文; 张文聪; 牟健翔; 邓志富;"
+            }
+        }
+    },
+    check:{
+        enable: true,
+        chkStyle: "checkbox",
+        chkboxType: { "Y" : "ps", "N" : "ps"},
+        autoCheckTrigger : true
+    }
+
+};
+
 // var rangerTreeObj;
 var rangerNodes = [
     {name:"四川省(57人)", open:true, children:[
@@ -364,7 +385,7 @@ $(document).ready(function(){
         zTreeObj.selectNode(nodes[0].children[0]);
     }
 
-    rangerTreeObj = $.fn.zTree.init($("#messageRangerListTree"), setting, rangerNodes);
+    rangerTreeObj = $.fn.zTree.init($("#messageRangerListTree"), rangermessage, rangerNodes);
     var f_nodes = rangerTreeObj.getNodes();
     if (f_nodes.length>0) {
         rangerTreeObj.selectNode(f_nodes[0].children[0]);

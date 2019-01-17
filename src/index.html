@@ -2,20 +2,21 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="ie=edge" http-equiv="x-ua-compatible">
-  <title></title>
-  <meta content="" name="description">
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!--<link href="site.webmanifest" rel="manifest">-->
-  <link href="icon.png" rel="apple-touch-icon">
-  <link href="css/main.css" rel="stylesheet">
-  <link href="css/zTreeStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--<link href="site.webmanifest" rel="manifest">-->
+    <link href="icon.png" rel="apple-touch-icon">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/zTreeStyle.css" rel="stylesheet">
 
-  <link href="css/component.css" rel="stylesheet">
-  <link href="http://localhost:8080/arcgis_js_api/library/4.10/esri/css/main.css" rel="stylesheet">
+    <link href="css/component.css" rel="stylesheet">
+    <link href="http://localhost:8080/arcgis_js_api/library/4.10/esri/css/main.css" rel="stylesheet">
 </head>
 
 <body class="container">
@@ -23,72 +24,72 @@
      style="z-index: -1;width:100%;height: 100%;position: absolute;top: 0;right: 0;bottom: 0;left: 0;">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-  your browser</a> to improve your experience and security.</p>
+    your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
 <header class="header">
-  <img src="img/header_bg.png" style="max-width: 100%">
+    <img src="img/header_bg.png" style="max-width: 100%">
 </header>
 
 <div class="main-container">
 
-  <aside class="left-aside">
-    <div class="aside-content">
-      <div class="t-line-box">
-        <div class="t-line-box-title">
-          <div class="aside left"></div>
-          <span class="text">基础数据</span>
-          <div class="aside right"></div>
-        </div>
+    <aside class="left-aside">
+        <div class="aside-content">
+            <div class="t-line-box">
+                <div class="t-line-box-title">
+                    <div class="aside left"></div>
+                    <span class="text">基础数据</span>
+                    <div class="aside right"></div>
+                </div>
 
-          <div class="t-line-box-content">
-              <div style="display: flex;justify-content:space-around;align-items:center;">
-                  <div class="rhombus-btn">
-                      <span class="rhombus-btn-left"></span>
-                      <div class="rhombus-btn-body basicData" >
-                          <span>行政区划</span>
-                      </div>
-                      <span class="rhombus-btn-right"></span>
-                  </div>
-                  <div class="rhombus-btn">
-                      <span class="rhombus-btn-left"></span>
-                      <div class="rhombus-btn-body basicData">
-                          <span>防火设施</span>
-                      </div>
-                      <span class="rhombus-btn-right"></span>
-                  </div>
-                  <div class="rhombus-btn">
-                      <span class="rhombus-btn-left"></span>
-                      <div id="river" class="rhombus-btn-body basicData" >
-                          <span>水系河流</span>
-                      </div>
-                      <span class="rhombus-btn-right"></span>
-                  </div>
-                  <div class="rhombus-btn">
-                      <span class="rhombus-btn-left"></span>
-                      <div class="rhombus-btn-body basicData" data-toggle="modal" data-target="#statisticsModal">
-                          <span>物资信息</span>
-                      </div>
-                      <span class="rhombus-btn-right"></span>
-                  </div>
-              </div>
-              <div class="padding-sm" style="display: flex;justify-content:space-around;align-items:center;">
-                  <div style="flex: 1 1 100%">
-                      <input type="text" placeholder="输入名称定位查询">
-                  </div>
-                  <div style="flex:1 0 80px;" class="search-btn">
-                      <span>查询</span>
-                  </div>
-              </div>
-              <div class="padding-sm">
-                  <div id="administrative">
-                      <ul id="treeDemo" class="ztree"></ul>
-                  </div>
-                  <div id="facility" >
-                      <ul id="fireproofingTree" class="ztree"></ul>
-                  </div>
-              </div>
-          </div>
+                <div class="t-line-box-content">
+                    <div style="display: flex;justify-content:space-around;align-items:center;">
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData">
+                                <span>行政区划</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData">
+                                <span>防火设施</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div id="river" class="rhombus-btn-body basicData">
+                                <span>水系河流</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                        <div class="rhombus-btn">
+                            <span class="rhombus-btn-left"></span>
+                            <div class="rhombus-btn-body basicData" data-toggle="modal" data-target="#statisticsModal">
+                                <span>物资信息</span>
+                            </div>
+                            <span class="rhombus-btn-right"></span>
+                        </div>
+                    </div>
+                    <div class="padding-sm" style="display: flex;justify-content:space-around;align-items:center;">
+                        <div style="flex: 1 1 100%">
+                            <input type="text" placeholder="输入名称定位查询">
+                        </div>
+                        <div style="flex:1 0 80px;" class="search-btn">
+                            <span>查询</span>
+                        </div>
+                    </div>
+                    <div class="padding-sm">
+                        <div id="administrative">
+                            <ul id="treeDemo" class="ztree"></ul>
+                        </div>
+                        <div id="facility">
+                            <ul id="fireproofingTree" class="ztree"></ul>
+                        </div>
+                    </div>
+                </div>
                 <i class="corners t-t-line"></i>
                 <i class="corners t-l-line"></i>
                 <i class="corners l-t-line"></i>
@@ -259,7 +260,8 @@
                                 </div>
                             </div>
                             <div class="alarm-content">
-                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg" style="margin-bottom: 10px">
+                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg"
+                                       style="margin-bottom: 10px">
                                     <tr>
                                         <th>编号</th>
                                         <th>区域</th>
@@ -303,7 +305,8 @@
                                 </div>
                             </div>
                             <div class="alarm-content">
-                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg" style="margin-bottom: 10px">
+                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg"
+                                       style="margin-bottom: 10px">
                                     <tr>
                                         <th>姓名</th>
                                         <th>区域</th>
@@ -354,7 +357,8 @@
                                 </div>
                             </div>
                             <div class="alarm-content">
-                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg" style="margin-bottom: 10px">
+                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg"
+                                       style="margin-bottom: 10px">
                                     <tr>
                                         <th>编号</th>
                                         <th>地址</th>
@@ -400,7 +404,7 @@
                         <div>
                             <div class="rhombus-btn">
                                 <span class="rhombus-btn-left"></span>
-                                <div class="rhombus-btn-body basicData" >
+                                <div class="rhombus-btn-body basicData">
                                     <span>新建</span>
                                 </div>
                                 <span class="rhombus-btn-right"></span>
@@ -416,7 +420,7 @@
                         <div>
                             <div class="rhombus-btn">
                                 <span class="rhombus-btn-left"></span>
-                                <div class="rhombus-btn-body basicData" >
+                                <div class="rhombus-btn-body basicData">
                                     <span>导入/出</span>
                                 </div>
                                 <span class="rhombus-btn-right"></span>
@@ -443,7 +447,7 @@
                     <div class="flex-row" style="justify-content: space-between">
                         <div class="rhombus-btn">
                             <span class="rhombus-btn-left"></span>
-                            <div class="rhombus-btn-body basicData" >
+                            <div class="rhombus-btn-body basicData">
                                 <span>火场信息</span>
                             </div>
                             <span class="rhombus-btn-right"></span>
@@ -524,7 +528,8 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content hy-modal-content">
             <div class="modal-header hy-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">护林员在线状态</h4>
             </div>
             <div class="modal-body">
@@ -558,7 +563,8 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content hy-modal-content">
             <div class="modal-header hy-modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
                 <h4 class="modal-title" id="statisticsModalLabel">出勤统计</h4>
             </div>
             <div class="modal-body" style="max-height: 650px;overflow-y: auto">
@@ -723,7 +729,8 @@
 <!--热点报警弹框-->
 
 <!--护林员报警弹框-->
-<div class="modal fade bs-example-modal-lg" id="personAlarm" tabindex="-1" role="dialog" aria-labelledby="personAlarLabel">
+<div class="modal fade bs-example-modal-lg" id="personAlarm" tabindex="-1" role="dialog"
+     aria-labelledby="personAlarLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content hy-modal-content">
             <div class="modal-header hy-modal-header">
@@ -735,7 +742,8 @@
             <!--body-->
             <div class="modal-body" style="margin: 0 auto;padding-bottom:0">
                 <div class="row">
-                    <table class="table table-bordered hy-table-bordered hy-table-bg" style="width: 40%; float: left;margin-bottom: 5px">
+                    <table class="table table-bordered hy-table-bordered hy-table-bg"
+                           style="width: 40%; float: left;margin-bottom: 5px">
                         <tr>
                             <td colspan="2">
                                 <span class="person-table-head">王世伟</span>
@@ -761,7 +769,8 @@
                     <div class="person-photo">
                         <img style="width: 100%; height: 100%" src="img/ranger_photo.jpg" alt="">
                     </div>
-                    <table class="table table-bordered hy-table-bordered hy-table-bg" style="width: 40%; float: left;margin-bottom: 5px">
+                    <table class="table table-bordered hy-table-bordered hy-table-bg"
+                           style="width: 40%; float: left;margin-bottom: 5px">
                         <tr>
                             <td colspan="2">
                                 <span class="person-table-head">来报信息</span>
@@ -814,7 +823,8 @@
 <!--护林员报警弹框-->
 
 <!--视频监控报警-->
-<div class="modal fade bs-example-modal-lg" id="videoAlarm" tabindex="-1" role="dialog" aria-labelledby="videoAlarmLabel">
+<div class="modal fade bs-example-modal-lg" id="videoAlarm" tabindex="-1" role="dialog"
+     aria-labelledby="videoAlarmLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content hy-modal-content">
             <div class="modal-header hy-modal-header">
@@ -893,7 +903,8 @@
 <!--视频监控报警-->
 
 <!--护林员异常查询-->
-<div class="modal fade bs-example-modal-lg" id="forestRangerException" tabindex="-1" role="dialog" aria-labelledby="forestRangerExceptionLabel">
+<div class="modal fade bs-example-modal-lg" id="forestRangerException" tabindex="-1" role="dialog"
+     aria-labelledby="forestRangerExceptionLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content hy-modal-content">
             <div class="modal-header hy-modal-header">
@@ -1053,7 +1064,8 @@
 <!--护林员异常查询-->
 
 <!--护林员上报信息查看-->
-<div class="modal fade bs-example-modal-md" id="forestRangerInformation" tabindex="-1" role="dialog" aria-labelledby="forestRangerInformationLabel">
+<div class="modal fade bs-example-modal-md" id="forestRangerInformation" tabindex="-1" role="dialog"
+     aria-labelledby="forestRangerInformationLabel">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content hy-modal-content">
             <div class="modal-header hy-modal-header">
@@ -1121,7 +1133,8 @@
 <!--护林员上报信息查看-->
 
 <!--护林员群发-->
-<div class="modal fade bs-example-modal-lg" id="forestRangerMass" tabindex="-1" role="dialog" aria-labelledby="forestRangerMassLabel">
+<div class="modal fade bs-example-modal-lg" id="forestRangerMass" tabindex="-1" role="dialog"
+     aria-labelledby="forestRangerMassLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content hy-modal-content">
             <div class="modal-header hy-modal-header">
@@ -1191,7 +1204,9 @@
 <!--护林员群发-->
 
 <script src="js/jquery-1.12.4.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 <!--<script src="https://js.arcgis.com/4.10/"></script>-->
 <script src="http://localhost:8080/arcgis_js_api/library/4.10/init.js" type="text/javascript"></script>
 <script src="js/main.js"></script>
