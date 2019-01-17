@@ -192,16 +192,14 @@ select {
 /*select样式修改*/
 
 /*弹框修改*/
-.hy-modal-content {
+.hy-modal-content{
     /*background-color: #0e507c*/
-    background-color: rgba(8, 48, 74, 0.98);
+    background-color:rgba(8, 48, 74,0.98);
 }
-
-.hy-modal-header {
+.hy-modal-header{
     border-bottom-color: rgba(28, 158, 159, 0.5);
 }
-
-.hy-modal-header > button > span {
+.hy-modal-header > button > span{
     color: #def0f5;
 }
 /*scrollbar*/

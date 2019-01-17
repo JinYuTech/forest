@@ -13,6 +13,9 @@ var setting = {
                 $("#img").attr({ src: "img/bg_3.jpg" });
 
             }
+            if (treeNode.name ==="龙泉驿(5)") {
+                document.getElementById("rangerName").innerText = "李泽宇; 王世伟; 刁静文; 张文聪; 牟健翔; 邓志富;"
+            }
         }
     }
 };
@@ -270,3 +273,105 @@ $(document).ready(function(){
         commandTreeObj.selectNode(c_nodes[0]);
     }
 });
+
+
+//======================首页护林员管理树start by_Dylan ========================
+var rangerTreeObj;
+var rangerNodes = [
+    {name:"四川省(57人)", open:true, children:[
+        {name:"成都市(39人)",open:true, children:[
+            {name:"锦江区(2人)"},
+            {name:"龙泉驿(5)",open:true,children:[
+                {name:"李泽宇"},
+                {name:"王世伟"},
+                {name:"刁静文"},
+                {name:"张文聪"},
+                {name:"牟健翔"},
+                {name:"邓志富"},
+            ]},
+            {name:"金牛区(17)"},
+            {name:"郫都区(7)"},
+            {name:"高新区(8)"}
+        ]},
+        {name:"宜宾市(2人)"},
+        {name:"眉山市(5人)"},
+        {name:"乐山市(12人)"}]
+    }
+];
+$(document).ready(function(){
+    console.log("开始渲染zTreeObj");
+    zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    var nodes = zTreeObj.getNodes();
+    if (nodes.length>0) {
+        zTreeObj.selectNode(nodes[0].children[0]);
+    }
+
+    rangerTreeObj = $.fn.zTree.init($("#rangerListTree"), setting, rangerNodes);
+    var f_nodes = rangerTreeObj.getNodes();
+    if (f_nodes.length>0) {
+        rangerTreeObj.selectNode(f_nodes[0].children[0]);
+    }
+    $("#ranger").hide();
+});
+
+// $(".basicData").click(function (data) {
+//     console.log($(this).context.innerText,"点击事件");
+//     var category =  $(this).context.innerText;
+//     if(category === '行政区划'){
+//         $("#img").attr({ src: "img/bg_1.jpg" }); //TODO 看具体演示修改修改
+//         $("#administrative").show();
+//         $("#facility").hide();
+//     }else if (category === '防火设施'){
+//         $("#img").attr({ src: "img/bg_2.jpg" }); //TODO 看具体演示修改修改
+//         $("#facility").show();
+//         $("#administrative").hide();
+//     }
+// });
+
+//======================首页护林员管理树end by_Dylan ==========================
+
+
+
+//======================弹框短信群发护林员树end by_Dylan ==========================
+
+// var rangerTreeObj;
+var rangerNodes = [
+    {name:"四川省(57人)", open:true, children:[
+            {name:"成都市(39人)",open:true, children:[
+                    {name:"锦江区(2人)"},
+                    {name:"龙泉驿(5)",open:false,children:[
+                            {name:"李泽宇"},
+                            {name:"王世伟"},
+                            {name:"刁静文"},
+                            {name:"张文聪"},
+                            {name:"牟健翔"},
+                            {name:"邓志富"},
+                        ]},
+                    {name:"金牛区(17)"},
+                    {name:"郫都区(7)"},
+                    {name:"高新区(8)"}
+                ]},
+            {name:"宜宾市(2人)"},
+            {name:"眉山市(5人)"},
+            {name:"乐山市(12人)"}]
+    }
+];
+$(document).ready(function(){
+    console.log("开始渲染zTreeObj");
+    zTreeObj = $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+    var nodes = zTreeObj.getNodes();
+    if (nodes.length>0) {
+        zTreeObj.selectNode(nodes[0].children[0]);
+    }
+
+    rangerTreeObj = $.fn.zTree.init($("#messageRangerListTree"), setting, rangerNodes);
+    var f_nodes = rangerTreeObj.getNodes();
+    if (f_nodes.length>0) {
+        rangerTreeObj.selectNode(f_nodes[0].children[0]);
+    }
+    $("#ranger").hide();
+});
+
+
+
+//======================弹框短信群发护林员树end by_Dylan ==========================
