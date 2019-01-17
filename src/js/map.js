@@ -116,6 +116,18 @@
     });
 
     map.add(layer);
+
+    (function f() {
+        layer.removeAll();
+        layer.add(new Graphic({
+        attributes: {id: 5},
+        geometry: {type: 'point', longitude: 104.3490009443, latitude: 30.6233075364,},
+        symbol: {type: 'picture-marker', url: './img/ic_map_person_fire.png', width: '24px', height: '24px',},
+      }))
+
+    })();
+
+
   });
 
 }());
