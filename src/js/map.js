@@ -74,7 +74,7 @@
 
     let graphic5 = new Graphic({
       attributes: {id: 5},
-      geometry: {type: 'point', longitude: 104.3490009443, latitude: 30.6233075364,},
+      geometry: {type: 'point', longitude: 104.3490009443, latitude: 30.6233075364},
       symbol: {type: 'picture-marker', url: './img/ic_map_person_fire.png', width: '24px', height: '24px',},
     });
 
@@ -92,21 +92,18 @@
         if (graphics !== undefined && graphics !== null) {
           switch (graphics.attributes.id) {
             case 1:
-              view.goTo({target: graphics, zoom: 17, tilt: 0}, {duration: 4000, easing: 'in-expo'}).then(function () {
-                alert('选中了火焰');
-              });
+              $('#fireAlarm').modal('show');
               break;
             case 2:
-              alert('选中了相机');
               break;
             case 3:
-              alert('选中了护林员');
+              $('#onlineModal').modal('show');
               break;
             case 4:
-              alert('选中了山火报警相机');
+              $('#videoAlarm').modal('show');
               break;
             case 5:
-              alert('选中了山火报警护林员');
+              $('#personAlarm').modal('show');
               break;
           }
         }
@@ -299,6 +296,47 @@
     document.getElementById('commandTree_4_a').addEventListener('click',
       function () {
 
+      });
+
+    document.getElementById('fire-point-alarm').addEventListener('click',
+      function () {
+        view.goTo({
+          target: [104.3490009443, 30.5233075364],
+          zoom: 17,
+          heading: 0,
+          tilt: 0
+        });
+      });
+    document.getElementById('fire-person-alarm').addEventListener('click',
+      function () {
+        view.goTo({
+          target: [104.3490009443, 30.6233075364],
+          zoom: 17,
+          heading: 0,
+          tilt: 0
+        });
+      });
+
+    document.getElementById('fire-person-alarm-tow').addEventListener('click',
+      function () {
+
+        $('#forestRangerInformation').modal('hide');
+        view.goTo({
+          target: [104.3490009443, 30.6233075364],
+          zoom: 17,
+          heading: 0,
+          tilt: 0
+        });
+      });
+
+    document.getElementById('fire-video-alarm').addEventListener('click',
+      function () {
+        view.goTo({
+          target: [104.3490009443, 30.5443075364],
+          zoom: 17,
+          heading: 0,
+          tilt: 0
+        });
       });
   });
 

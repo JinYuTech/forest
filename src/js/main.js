@@ -246,9 +246,6 @@ $('#statisticsModal').on('shown.bs.modal', function (e) {
   onlineRateChart.setOption(onlineRateOption);
 });
 
-$('#river').on('click', function () {
-  $('#onlineModal').modal('show');
-});
 
 //======================灭火指挥start by_Dylan ========================
 var commandNodes = [
