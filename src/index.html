@@ -2,139 +2,656 @@
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="ie=edge" http-equiv="x-ua-compatible">
-  <title></title>
-  <meta content="" name="description">
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta charset="utf-8">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title></title>
+    <meta content="" name="description">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
-  <link href="site.webmanifest" rel="manifest">
-  <link href="icon.png" rel="apple-touch-icon">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--bootstrap-->
 
-  <link href="css/main.css" rel="stylesheet">
-  <link href="https://js.arcgis.com/4.10/esri/css/main.css" rel="stylesheet">
+    <!--Ztree-->
+    <!--<link rel="stylesheet" href="zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">-->
+
+    <link href="icon.png" rel="apple-touch-icon">
+
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/component.css" rel="stylesheet">
+    <link href="https://js.arcgis.com/4.10/esri/css/main.css" rel="stylesheet">
 </head>
 
 <body class="container">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-  your browser</a> to improve your experience and security.</p>
+    your browser</a> to improve your experience and security.</p>
 <![endif]-->
 
 <header class="header">
-  <img src="img/header_bg.png">
+    <img src="img/header_bg.png">
 </header>
 
 <div class="main-container">
 
-  <aside class="left-aside">
-    <div class="aside-content">
-      <div class="t-line-box">
-        <div class="t-line-box-title">
-          <div class="aside left"></div>
-          <span class="text">基础数据</span>
-          <div class="aside right"></div>
+    <aside class="left-aside">
+        <div class="aside-content">
+            <div class="t-line-box">
+                <div class="t-line-box-title">
+                    <div class="aside left"></div>
+                    <span class="text">基础数据</span>
+                    <div class="aside right"></div>
+                </div>
+
+                <i class="corners t-t-line"></i>
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+            </div>
         </div>
 
-        <i class="corners t-t-line"></i>
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
-    </div>
+        <div class="aside-content" style="margin-bottom: 8px;">
+            <div class="t-line-box">
+                <div class="t-line-box-title">
+                    <div class="aside left"></div>
+                    <span class="text">护林员管理</span>
+                    <div class="aside right"></div>
+                </div>
+                <div class="t-line-box-content">
+                    <div class="ranger-manage-head">
+                        <div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body">
+                                    <span>统计</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body">
+                                    <span>异常</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body">
+                                    <span>群呼</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body">
+                                    <span>管理</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                            <div class="rhombus-btn">
+                                <span class="rhombus-btn-left"></span>
+                                <div class="rhombus-btn-body">
+                                    <span>信息</span>
+                                </div>
+                                <span class="rhombus-btn-right"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ranger-manage-search">
+                        <input type="text" placeholder="输入姓名电话">
+                        <div class="search-btn">
+                            <span>查询</span>
+                        </div>
+                    </div>
+                    <div class="ranger-manage-tree-box">
 
-    <div class="aside-content" style="margin-bottom: 8px;">
-      <div class="t-line-box">
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
-    </div>
-  </aside>
+                    </div>
+                </div>
 
-  <div class="center-content">
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+            </div>
+        </div>
+    </aside>
 
-    <div id="map" style="display: flex;flex: 1;margin: 8px">
+    <div class="center-content">
 
-    </div>
+        <div id="map" style="display: flex;flex: 1;margin: 8px">
 
-    <div class="nav-box">
-      <div class="t-line-box">
-        <i class="corners t-t-line"></i>
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-        <div class="nav-box-container">
-          <div class="nav-box-item">
-            <img alt="应急" src="img/ic_emergency.png">
-            <span class="text-title">应急</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="队伍" src="img/ic_group.png">
-            <span class="text-title">队伍</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="物资" src="img/ic_substance.png">
-            <span class="text-title">物资</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="巡检" src="img/ic_inspector.png">
-            <span class="text-title">巡检</span>
-          </div>
-          <div class="nav-box-item">
-            <img alt="保护资源" src="img/ic_resource.png">
-            <span class="text-title">保护资源</span>
-          </div>
         </div>
 
-      </div>
-    </div>
-  </div>
+        <div class="nav-box">
+            <div class="t-line-box">
+                <i class="corners t-t-line"></i>
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+                <div class="nav-box-container">
+                    <div class="nav-box-item">
+                        <img alt="应急" src="img/ic_emergency.png">
+                        <span class="text-title">应急</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="队伍" src="img/ic_group.png">
+                        <span class="text-title">队伍</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="物资" src="img/ic_substance.png">
+                        <span class="text-title">物资</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="巡检" src="img/ic_inspector.png">
+                        <span class="text-title">巡检</span>
+                    </div>
+                    <div class="nav-box-item">
+                        <img alt="保护资源" src="img/ic_resource.png">
+                        <span class="text-title">保护资源</span>
+                    </div>
+                </div>
 
-  <aside class="right-aside" style="margin-right: 8px">
-    <div class="aside-content">
-      <div class="t-line-box">
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
+            </div>
+        </div>
     </div>
 
-    <div class="aside-content" style="margin-bottom: 8px;">
-      <div class="t-line-box">
-        <i class="corners t-l-line"></i>
-        <i class="corners l-t-line"></i>
-        <i class="corners t-r-line"></i>
-        <i class="corners r-t-line"></i>
-        <i class="corners b-l-line"></i>
-        <i class="corners l-b-line"></i>
-        <i class="corners b-r-line"></i>
-        <i class="corners r-b-line"></i>
-      </div>
-    </div>
-  </aside>
+    <aside class="right-aside" style="margin-right: 8px">
+        <div class="aside-content">
+            <div class="t-line-box">
+                <div class="t-line-box-title">
+                    <div class="aside left"></div>
+                    <span class="text">预警监测</span>
+                    <div class="aside right"></div>
+                </div>
+                <div class="t-line-box-content">
+                    <div class="early-warning-type-box">
+                        <!--热点报警-->
+                        <div class="early-warning-type">
+                            <div class="alarm-head">
+                                <div class="rhombus-btn">
+                                    <span class="rhombus-btn-left"></span>
+                                    <div class="rhombus-btn-body">
+                                        <span>热点报警</span>
+                                    </div>
+                                    <span class="rhombus-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>全部</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>查询</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>统计</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                            </div>
+                            <div class="alarm-content">
+                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg" style="margin-bottom: 10px">
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>区域</th>
+                                        <th>时间</th>
+                                        <th>反馈情况</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    <tr data-toggle="modal" data-target="#fireAlarm">
+                                        <td>HY_000001</td>
+                                        <td>五台山</td>
+                                        <td>今天</td>
+                                        <td>林火</td>
+                                        <td>停止</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!--护林员报警-->
+                        <div class="early-warning-type">
+                            <div class="alarm-head">
+                                <div class="rhombus-btn">
+                                    <span class="rhombus-btn-left"></span>
+                                    <div class="rhombus-btn-body">
+                                        <span>护林员报警</span>
+                                    </div>
+                                    <span class="rhombus-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>历史查询</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>全部停止</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                            </div>
+                            <div class="alarm-content">
+                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg" style="margin-bottom: 10px">
+                                    <tr>
+                                        <th>姓名</th>
+                                        <th>区域</th>
+                                        <th>时间</th>
+                                        <th>报警类型</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    <tr data-toggle="modal" data-target="#personAlarm">
+                                        <td>王世伟</td>
+                                        <td>五台山东侧</td>
+                                        <td>10min</td>
+                                        <td>野外火</td>
+                                        <td>停止</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!--视频监控报警-->
+                        <div class="early-warning-type">
+                            <div class="alarm-head">
+                                <div class="rhombus-btn">
+                                    <span class="rhombus-btn-left"></span>
+                                    <div class="rhombus-btn-body">
+                                        <span>视频监控报警</span>
+                                    </div>
+                                    <span class="rhombus-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>全停</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>查询</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                                <div class="square-btn">
+                                    <span class="square-btn-left"></span>
+                                    <div class="square-btn-body">
+                                        <span>统计</span>
+                                    </div>
+                                    <span class="square-btn-right"></span>
+                                </div>
+                            </div>
+                            <div class="alarm-content">
+                                <table class="table table-condensed hy-table-hover hy-table-bordered hy-table-bg" style="margin-bottom: 10px">
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>地址</th>
+                                        <th>时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    <tr data-toggle="modal" data-target="#videoAlarm">
+                                        <td>HY_000001</td>
+                                        <td>五台山</td>
+                                        <td>一小时前</td>
+                                        <td>停止</td>
+                                    </tr>
+                                    <tr data-toggle="modal" data-target="#videoAlarm">
+                                        <td>HY_000001</td>
+                                        <td>五台山</td>
+                                        <td>5天前</td>
+                                        <td>停止</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+            </div>
+        </div>
+        <div class="aside-content" style="margin-bottom: 8px;">
+            <div class="t-line-box">
+                <i class="corners t-l-line"></i>
+                <i class="corners l-t-line"></i>
+                <i class="corners t-r-line"></i>
+                <i class="corners r-t-line"></i>
+                <i class="corners b-l-line"></i>
+                <i class="corners l-b-line"></i>
+                <i class="corners b-r-line"></i>
+                <i class="corners r-b-line"></i>
+            </div>
+        </div>
+    </aside>
 </div>
 
+
+
+<!--热点报警弹框-->
+<div class="modal fade bs-example-modal-lg" id="fireAlarm" tabindex="-1" role="dialog" aria-labelledby="fireAlarmLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content hy-modal-content">
+            <div class="modal-header hy-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="fireAlarmLabel">热点报警详情</h4>
+            </div>
+            <!--body-->
+            <div class="modal-body" style="margin: 0 auto">
+                <!--row -->
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="row text-center">
+                            <img src="img/20190115-061055-sm.jpeg" style="width: 95%; height: 480px"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="row-row">
+                            <div class="cell">
+                                <div class="cell-inner">
+                                    <div class="clearfix padder-md">
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">采集时间:</span>
+                                                <small class="m-l-sm">2019-01-15 06:09:30</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">设备编号:</span>
+                                                <small class="m-l-sm">HY_000001</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">地域名称:</span>
+                                                <small class="m-l-sm">龙泉驿</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">反馈情况:</span>
+                                                <small class="m-l-sm">林火</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">地形类型:</span>
+                                                <small class="m-l-sm">林地</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">过火面积:</span>
+                                                <small class="m-l-sm">10公顷</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">损失情况:</span>
+                                                <small class="m-l-sm">0.0公顷</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">填报单位:</span>
+                                                <small class="m-l-sm">四川省</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">填报人:</span>
+                                                <small class="m-l-sm">四川省防火办</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">监测单位:</span>
+                                                <small class="m-l-sm">龙泉驿</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">监测人:</span>
+                                                <small class="m-l-sm">李小明</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">经度:</span>
+                                                <small class="m-l-sm">104.066513</small>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="form-group m-b-sm">
+                                                <span class="text-black">纬度:</span>
+                                                <small class="m-l-sm">30.572262</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/row -->
+
+            </div>
+            <!--body-->
+        </div>
+    </div>
+</div>
+<!--热点报警弹框-->
+
+<!--护林员报警弹框-->
+<div class="modal fade bs-example-modal-lg" id="personAlarm" tabindex="-1" role="dialog" aria-labelledby="personAlarLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content hy-modal-content">
+            <div class="modal-header hy-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="personAlarmLabel">护林员报警详情</h4>
+            </div>
+            <!--body-->
+            <div class="modal-body" style="margin: 0 auto;padding-bottom:0">
+                <div class="row">
+                    <table class="table table-bordered hy-table-bordered hy-table-bg" style="width: 40%; float: left;margin-bottom: 5px">
+                        <tr>
+                            <td colspan="2">
+                                <span class="person-table-head">王世伟</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>区域</td>
+                            <td>13564578085</td>
+                        </tr>
+                        <tr>
+                            <td>手机</td>
+                            <td>13564578085</td>
+                        </tr>
+                        <tr>
+                            <td>职务</td>
+                            <td>护林员</td>
+                        </tr>
+                        <tr>
+                            <td>单位</td>
+                            <td>龙泉林业局</td>
+                        </tr>
+                    </table>
+                    <div class="person-photo">
+                        <img style="width: 100%; height: 100%" src="img/u=3416144229,1904216765&fm=26&gp=0.jpg" alt="">
+                    </div>
+                    <table class="table table-bordered hy-table-bordered hy-table-bg" style="width: 40%; float: left;margin-bottom: 5px">
+                        <tr>
+                            <td colspan="2">
+                                <span class="person-table-head">来报信息</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>经度</td>
+                            <td>104.066513</td>
+                        </tr>
+                        <tr>
+                            <td>纬度</td>
+                            <td>30.572262</td>
+                        </tr>
+                        <tr>
+                            <td>时间</td>
+                            <td>2019-01-15 06:09:30</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding: 4px">
+                                <div style="text-align: center">
+                                    <div class="square-btn" style="margin: 0 10px;">
+                                        <span class="square-btn-left"></span>
+                                        <div class="square-btn-body">
+                                            <span>发送信息</span>
+                                        </div>
+                                        <span class="square-btn-right"></span>
+                                    </div>
+                                    <div class="square-btn" style="margin: 0 10px;">
+                                        <span class="square-btn-left"></span>
+                                        <div class="square-btn-body">
+                                            <span>发送语言</span>
+                                        </div>
+                                        <span class="square-btn-right"></span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row">
+                    <div style="margin: 5px">
+                        <img style="width: 100%;" src="img/20190115-180204-366.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!--body-->
+        </div>
+    </div>
+</div>
+<!--护林员报警弹框-->
+
+<!--视频监控报警-->
+<div class="modal fade bs-example-modal-lg" id="videoAlarm" tabindex="-1" role="dialog" aria-labelledby="videoAlarmLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content hy-modal-content">
+            <div class="modal-header hy-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="videoAlarmLabel">龙泉驿马鞍山视频详情</h4>
+            </div>
+            <!--body-->
+            <div class="modal-body" style="margin: 0 auto;">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <table class="table table-bordered hy-table-bordered hy-table-bg">
+                            <tr>
+                                <td>设备编号</td>
+                                <td>HY_000001</td>
+                            </tr>
+                            <tr>
+                                <td>管理单位</td>
+                                <td>四川省龙泉驿林业局</td>
+                            </tr>
+                            <tr>
+                                <td>地址</td>
+                                <td>龙泉驿马鞍山长丰村</td>
+                            </tr>
+                            <tr>
+                                <td>经度</td>
+                                <td>104.5498518</td>
+                            </tr>
+                            <tr>
+                                <td>纬度</td>
+                                <td>32.484988</td>
+                            </tr>
+                            <tr>
+                                <td>品牌</td>
+                                <td>汇源</td>
+                            </tr>
+                            <tr>
+                                <td>高程</td>
+                                <td>0.0米</td>
+                            </tr>
+                            <tr>
+                                <td>设备高度</td>
+                                <td>15.0米</td>
+                            </tr>
+                            <tr>
+                                <td>监控范围</td>
+                                <td>2000米</td>
+                            </tr>
+                            <tr>
+                                <td>设备状态</td>
+                                <td>在线</td>
+                            </tr>
+                            <tr>
+                                <td>行政划区编码</td>
+                                <td>510112000000</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div style="background: #ccc;width: 570px;height: 410px">
+                            <video width="100%" height="100%" controls>
+                                <source src="movie.mp4" type="video/mp4">
+                                <source src="movie.ogg" type="video/ogg">
+                                您的浏览器不支持 video 标签。
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--body-->
+        </div>
+    </div>
+</div>
+<!--视频监控报警-->
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 <script src="https://js.arcgis.com/4.10/"></script>
 <script src="js/main.js"></script>
 <script src="js/map.js"></script>
