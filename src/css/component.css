@@ -142,6 +142,7 @@
 .hy-table-bg > thead > tr {
     background-color: #0a2f4a;
 }
+
 /*表格*/
 
 /*input样式修改*/
@@ -176,3 +177,15 @@ input {
     color: #def0f5;
 }
 /*弹框修改*/
+/*scrollbar*/
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-body::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #20728a;
+}
+.modal-body::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(28, 158, 159, 0.5);
+}
