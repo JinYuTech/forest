@@ -163,7 +163,16 @@ input {
     outline: 0;
     width: 100%;
 }
-
+input[name='small'] {
+    padding:0;
+    box-shadow:none;
+    height: 20px;
+    border-radius: 0;
+    width: 150px;
+}
+dd input[type="text"]{
+    width: 120px;
+}
 /*input样式修改*/
 
 /*select样式修改*/
@@ -195,5 +204,15 @@ select {
 .hy-modal-header > button > span {
     color: #def0f5;
 }
-
-/*弹框修改*/
+/*scrollbar*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #20728a;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(28, 158, 159, 0.5);
+}
