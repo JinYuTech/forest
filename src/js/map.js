@@ -83,9 +83,20 @@
       geometry: {type: 'point', longitude: 104.34521408430817, latitude: 30.52461967234952},
       symbol: {type: 'picture-marker', url: './img/ic_map_person.png', width: '24px', height: '24px',},
     });
+    let graphic7 = new Graphic({
+      attributes: {id: 7},
+      geometry: {type: 'point', longitude: 104.35543803567211, latitude: 30.531098080401037},
+      symbol: {type: 'picture-marker', url: './img/ic_map_person_offline.png', width: '24px', height: '24px',},
+    });
+
+    let graphic8 = new Graphic({
+      attributes: {id: 8},
+      geometry: {type: 'point', longitude: 104.3547279834778, latitude: 30.519139865231992},
+      symbol: {type: 'picture-marker', url: './img/ic_map_person_error.png', width: '24px', height: '24px',},
+    });
 
     var layer = new GraphicsLayer({
-      graphics: [graphic1, graphic2, graphic3, graphic4, graphic5, graphic6]
+      graphics: [graphic1, graphic2, graphic3, graphic4, graphic5, graphic6, graphic7, graphic8]
     });
     view.on('click', function (event) {
       console.log('{longitude:' + event.mapPoint.longitude + ',latitude:' + event.mapPoint.latitude + '},');
