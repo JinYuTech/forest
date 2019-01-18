@@ -78,11 +78,17 @@
       symbol: {type: 'picture-marker', url: './img/ic_map_person_fire.png', width: '24px', height: '24px',},
     });
 
+    let graphic6 = new Graphic({
+      attributes: {id: 6},
+      geometry: {type: 'point', longitude: 104.34521408430817, latitude: 30.52461967234952},
+      symbol: {type: 'picture-marker', url: './img/ic_map_person.png', width: '24px', height: '24px',},
+    });
+
     var layer = new GraphicsLayer({
-      graphics: [graphic1, graphic2, graphic3, graphic4, graphic5]
+      graphics: [graphic1, graphic2, graphic3, graphic4, graphic5, graphic6]
     });
     view.on('click', function (event) {
-      // console.log('[' + event.mapPoint.longitude + ',' + event.mapPoint.latitude + '],');
+      console.log('{longitude:' + event.mapPoint.longitude + ',latitude:' + event.mapPoint.latitude + '},');
       view.hitTest(event).then(function (response) {
         var result = response.results[0];
         if (result && result.graphic) {
@@ -104,6 +110,9 @@
               break;
             case 5:
               $('#personAlarm').modal('show');
+              break;
+            case 6:
+              displayTour();
               break;
           }
         }
@@ -424,6 +433,49 @@
           tilt: 0
         });
       });
+
+
+    function displayTour() {
+      layer.removeAll();
+      layer.add(graphic6);
+      let n = 0;
+      startDraw(n);
+    }
+
+    function startDraw(n) {
+      var tours = [
+        {longitude: 104.34521408430817, latitude: 30.52461967234952},
+        {longitude: 104.34741155716046, latitude: 30.525942117024787},
+        {longitude: 104.34959604283995, latitude: 30.52645657477448},
+        {longitude: 104.35198712343782, latitude: 30.52630491378836},
+        {longitude: 104.35471187231705, latitude: 30.52584083561246},
+        {longitude: 104.35256913827466, latitude: 30.52619713834256},
+        {longitude: 104.35016514914881, latitude: 30.52646143006248},
+        {longitude: 104.34806587356074, latitude: 30.526156308161895},
+        {longitude: 104.34698724689304, latitude: 30.52585130732273},
+        {longitude: 104.34528089362927, latitude: 30.524731621123973}
+      ];
+      if (n + 1 <= tours.length) {
+        drawTour(tours[n], tours[n + 1], n);
+      }
+    }
+
+    function drawTour(first, second, n) {
+      let color = n > 3 ? [35, 221, 228] : [226, 119, 40];
+      view.goTo({target: [first.longitude, first.latitude], zoom: 17, tilt: 0}, {duration: 500}).then(function () {
+        layer.addMany([new Graphic({
+          geometry: {type: 'point', longitude: second.longitude, latitude: second.latitude},
+          symbol: {type: 'simple-marker', color: color, outline: {color: [255, 255, 255], width: 2}}
+        }), new Graphic({
+          geometry: {type: 'polyline', paths: [[first.longitude, first.latitude], [second.longitude, second.latitude]]},
+          symbol: {type: 'simple-line', color: color, width: 4},
+        })]);
+
+        setTimeout(function () {
+          startDraw(n + 1);
+        }, 1000);
+      });
+    }
   });
 
 }());
