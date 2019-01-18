@@ -101,6 +101,7 @@
               $('#fireAlarm').modal('show');
               break;
             case 2:
+              $('#videoLive').modal('show');
               break;
             case 3:
               $('#onlineModal').modal('show');
@@ -114,6 +115,9 @@
             case 6:
               displayTour();
               break;
+            case 10:
+              $('#firePointModal').modal('show');
+
           }
         }
       });

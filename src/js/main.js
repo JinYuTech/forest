@@ -4,7 +4,7 @@ var zTreeObj, facilityTreeObj;
 var setting = {
   callback: {
     onClick: function (event, treeId, treeNode) {
-      if (treeNode.name === '行政区划_州市') {
+      if (treeNode.name === '行政区划_县区') {
         $('#mock-img').attr({src: 'img/ic_map_line.jpg'}).css('visibility', 'visible');
 
       } else if (treeNode.name === '瞭望塔') {
