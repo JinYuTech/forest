@@ -100,8 +100,6 @@
                 <i class="corners r-b-line"></i>
             </div>
         </div>
-
-        <button data-toggle="modal" data-target="#videoLive">11111111111112222222222</button>
         <div class="aside-content" style="margin-bottom: 8px;">
             <div class="t-line-box">
                 <div class="t-line-box-title">
@@ -364,7 +362,7 @@
                                         <th>时间</th>
                                         <th>操作</th>
                                     </tr>
-                                    <tr data-toggle="modal" data-target="#videoAlarm">
+                                    <tr data-toggle="modal" data-target="#videoAlarm" onclick="createAlarmVideo()">
                                         <td>HY_000001</td>
                                         <td>五台山</td>
                                         <td>一小时前</td>
@@ -886,9 +884,8 @@
 
                     <div class="col-lg-8">
                         <div style="background: #ccc;width: 570px;height: 410px">
-                            <video width="100%" height="100%" autoplay>
+                            <video width="100%" height="100%" autoplay = true>
                                 <source src="video/visibleLight.mp4" type="video/mp4">
-                                <!--<source src="movie.ogg" type="video/ogg">-->
                                 您的浏览器不支持 video 标签。
                             </video>
                         </div>
@@ -1219,7 +1216,7 @@
                 <div class="row">
                     <div class="col-lg-9">
                         <div id="videoParent" style="background: #ccc;width: 620px;height: 410px">
-                            <video id="video" width="100%" height="100%" autoplay>
+                            <video id="video" width="100%" height="100%" autoplay="true">
                                 <source id="visibleLightVideo" src="video/visibleLight.mp4" type="video/mp4">
                             </video>
                         </div>
