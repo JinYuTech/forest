@@ -380,7 +380,15 @@ var rangerNodes = [
   }
 ];
 
+function displayTime() {
+  moment.locale('zh-cn');
+  var elt = document.getElementById('clock');
+  elt.innerText = moment().format('YYYY年MM月DD HH时mm分ss秒');
+  setTimeout(displayTime, 1000);
+}
+
 $(document).ready(function () {
+  displayTime();
   zTreeObj = $.fn.zTree.init($('#treeDemo'), setting, zNodes);
   var nodes = zTreeObj.getNodes();
   if (nodes.length > 0) {
