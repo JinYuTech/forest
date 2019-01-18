@@ -32,7 +32,6 @@
 </header>
 
 <div class="main-container">
-
     <aside class="left-aside">
         <div class="aside-content">
             <div class="t-line-box">
@@ -102,7 +101,7 @@
             </div>
         </div>
 
-
+        <button data-toggle="modal" data-target="#videoLive">11111111111112222222222</button>
         <div class="aside-content" style="margin-bottom: 8px;">
             <div class="t-line-box">
                 <div class="t-line-box-title">
@@ -887,8 +886,8 @@
 
                     <div class="col-lg-8">
                         <div style="background: #ccc;width: 570px;height: 410px">
-                            <video width="100%" height="100%" controls>
-                                <!--<source src="movie.mp4" type="video/mp4">-->
+                            <video width="100%" height="100%" autoplay>
+                                <source src="video/visibleLight.mp4" type="video/mp4">
                                 <!--<source src="movie.ogg" type="video/ogg">-->
                                 您的浏览器不支持 video 标签。
                             </video>
@@ -1177,8 +1176,8 @@
                             <!-- Tab panes -->
                             <textarea class="form-control message-content" rows="3"></textarea>
                             <div class="message-footer">
-                                <button>发送</button>
-                                <button>取消</button>
+                                <button data-dismiss="modal">发送</button>
+                                <button data-dismiss="modal">取消</button>
                             </div>
                         </div>
                     </div>
@@ -1202,6 +1201,60 @@
     </div>
 </div>
 <!--护林员群发-->
+
+
+<!--实时视频监控-->
+<div class="modal fade bs-example-modal-lg" id="videoLive" tabindex="-1" role="dialog"
+     aria-labelledby="videoAlarmLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content hy-modal-content">
+            <div class="modal-header hy-modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="liveVideo">龙泉驿马鞍山实时监控</h4>
+            </div>
+            <!--body-->
+            <div class="modal-body" style="margin: 0 auto;">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div id="videoParent" style="background: #ccc;width: 620px;height: 410px">
+                            <video id="video" width="100%" height="100%" autoplay>
+                                <source id="visibleLightVideo" src="video/visibleLight.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="video-ctrl-box">
+                            <div class="direction-ctrl">
+                                <span></span>
+                            </div>
+                            <div class="zoom-ctrl">
+                                <span class="zoom-ctrl-1"></span>
+                                <span class="zoom-ctrl-2"></span>
+                            </div>
+                            <div class="camera-check">
+                                <div>
+                                    <input type="radio" id="visibleLight"  checked onclick="checkCamera('visibleLight')">
+                                    <label for="visibleLight">可见光</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="infrared"   onclick="checkCamera('infrared')">
+                                    <label for="infrared">热成像</label>
+                                </div>
+                            </div>
+                            <div class="automatic-cruise">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--body-->
+        </div>
+    </div>
+</div>
+<!--实时视频监控-->
 
 <script src="js/jquery-1.12.4.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"

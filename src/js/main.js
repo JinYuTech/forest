@@ -392,7 +392,48 @@ $(document).ready(function(){
     }
     $("#ranger").hide();
 });
-
-
-
 //======================弹框短信群发护林员树end by_Dylan ==========================
+
+//相机切换
+function checkCamera(type) {
+    let visibleLight = document.getElementById("visibleLight");
+    let infrared = document.getElementById("infrared");
+    let video = document.getElementById("video");
+    let videoParent = document.getElementById("videoParent");
+    if (type==="visibleLight") {
+        visibleLight.checked=true;
+        infrared.checked= false;
+        //移除视频
+        video.parentNode.removeChild(video);
+
+        //添加视频
+        let video1 = document.createElement('video');
+        video1.style.width = '100%';
+        video1.style.height = '100%';
+        video1.autoplay = true;
+        let source = document.createElement('source');
+        source.id="infraredLightVideo";
+        source.src="video/visibleLight.mp4";
+        source.type="video/mp4";
+        video1.appendChild(source);
+        videoParent.appendChild(video1);
+    }else {
+        visibleLight.checked=false;
+        infrared.checked= true;
+        //移除视频
+        video.parentNode.removeChild(video);
+
+        //添加视频
+        let video2 = document.createElement('video');
+        video2.style.width = '100%';
+        video2.style.height = '100%';
+        video2.id = "video";
+        video2.autoplay = true;
+        let source = document.createElement('source');
+        source.id="infraredLightVideo";
+        source.src="video/infrared.mp4";
+        source.type="video/mp4";
+        video2.appendChild(source);
+        videoParent.appendChild(video2);
+    }
+}

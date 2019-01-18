@@ -163,17 +163,57 @@ input {
     outline: 0;
     width: 100%;
 }
+
 input[name='small'] {
-    padding:0;
-    box-shadow:none;
+    padding: 0;
+    box-shadow: none;
     height: 20px;
     border-radius: 0;
     width: 150px;
 }
-dd input[type="text"]{
+
+dd input[type="text"] {
     width: 120px;
 }
+
 /*input样式修改*/
+
+/*复选框样式*/
+input[type="radio"] + label::before {
+    content: "\a0";
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 50%;
+    text-indent: .15em;
+    margin-bottom: 4px;
+    border: 1px solid #CCCCCC;
+}
+
+input[type="radio"]:checked + label::before {
+    background-color: #19949c;
+    background-clip: content-box;
+    padding: 2px;
+}
+
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.radio-inline {
+    padding-left: 0;
+}
+
+input[type=radio][disabled]:checked + label::before {
+    background-color: #CCCCCC;
+    background-clip: content-box;
+    padding: 2px;
+}
+
+/*复选框样式*/
 
 /*select样式修改*/
 select {
@@ -192,24 +232,29 @@ select {
 /*select样式修改*/
 
 /*弹框修改*/
-.hy-modal-content{
+.hy-modal-content {
     /*background-color: #0e507c*/
-    background-color:rgba(8, 48, 74,0.98);
+    background-color: rgba(8, 48, 74, 0.98);
 }
-.hy-modal-header{
+
+.hy-modal-header {
     border-bottom-color: rgba(28, 158, 159, 0.5);
 }
-.hy-modal-header > button > span{
+
+.hy-modal-header > button > span {
     color: #def0f5;
 }
+
 /*scrollbar*/
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
     border-radius: 5px;
     background-color: #20728a;
 }
+
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background: rgba(28, 158, 159, 0.5);

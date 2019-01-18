@@ -681,4 +681,49 @@ ul, li {
     overflow: auto;
 }
 
+.direction-ctrl span{
+    text-align: center;
+    margin-left: 18px;
+    display: inline-block;
+    height: 135px;
+    width: 135px;
+    background:url('../img/direction_ctrl.png') no-repeat 0px 0px;
+}
+
+.zoom-ctrl span {
+    margin-top:20px;
+}
+
+.camera-check >div{
+    margin: 10px 30px 0 5px;
+    display: inline-block;
+    float: left;
+}
+
+.zoom-ctrl .zoom-ctrl-1 {
+    text-align: center;
+    display: inline-block;
+    height: 30px;
+    width: 183px;
+    background:url('../img/zoom-ctrl-1.png') no-repeat 0px 0px;
+}
+
+.zoom-ctrl .zoom-ctrl-2 {
+    text-align: center;
+    display: inline-block;
+    height: 30px;
+    width: 183px;
+    background:url('../img/zoom-ctrl-2.png') no-repeat 0px -3px;
+}
+
+.automatic-cruise span {
+    text-align: center;
+    margin-left: 38px;
+    margin-top: 20px;
+    display: inline-block;
+    height: 31px;
+    width: 101px;
+    background:url('../img/automatic_cruise.png') no-repeat 0px 0px;
+}
+
 /*lzy-end*/
