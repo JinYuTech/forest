@@ -177,6 +177,9 @@ dd input[type="text"] {
 }
 
 /*input样式修改*/
+.modal-dialog{
+    margin-top: 120px;
+}
 
 /*复选框样式*/
 input[type="radio"] + label::before {
