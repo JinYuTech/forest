@@ -46,13 +46,13 @@ $(document).ready(function () {
   zTreeObj = $.fn.zTree.init($('#treeDemo'), setting, zNodes);
   var nodes = zTreeObj.getNodes();
   if (nodes.length > 0) {
-    zTreeObj.selectNode(nodes[0].children[0]);
+    zTreeObj.selectNode(nodes[0]);
   }
 
   facilityTreeObj = $.fn.zTree.init($('#fireproofingTree'), setting, facilityNodes);
   var f_nodes = facilityTreeObj.getNodes();
   if (f_nodes.length > 0) {
-    facilityTreeObj.selectNode(f_nodes[0].children[0]);
+    facilityTreeObj.selectNode(f_nodes[0]);
   }
   $('#facility').hide();
 });
@@ -148,9 +148,9 @@ var generalOption = {
 var timeData = [];
 var countData = [];
 for (var i = 0; i < 20; i++) {
-  timeData.push('10日9时' + (i + 10) + '分');
-  // timeData.push(i);
-  countData.push(Math.floor(Math.random() * 40 + 120));
+  // timeData.push('14日9时' + (i + 10) + '分');
+  timeData.push(moment([2019, 0, 14, 9]).add(30 * (i + 1), 'minutes').format('D日h时mm分'));
+  countData.push(Math.floor(Math.random() * 40 + 20));
 }
 var myOption = {
   title: {
@@ -160,7 +160,7 @@ var myOption = {
     data: timeData
   },
   yAxis: {
-    min: 100
+    min: 10
   },
   series: [{
     type: 'line',
@@ -183,9 +183,11 @@ $('#onlineModal').on('shown.bs.modal', function (e) {
 });
 
 // 护林人员统计
-var statisticsData = [{area: '四川省', code: '124112412', total: 123, online: 110, borderIn: 89},
-  {area: '成都市', code: '124112411', total: 163, online: 155, borderIn: 75},
-  {area: '绵阳市', code: '124112415', total: 56, online: 37, borderIn: 32}];
+var statisticsData = [{area: '四川省', code: '600001', total: 57, online: 110, borderIn: 89},
+  {area: '成都市', code: '600002', total: 39, online: 33, borderIn: 30},
+  {area: '雷波县', code: '600003', total: 2, online: 2, borderIn: 2},
+  {area: '越西县', code: '600004', total: 5, online: 1, borderIn: 0},
+  {area: '乐山市', code: '600005', total: 12, online: 7, borderIn: 11}];
 var tbodyhtml = '';
 var online = {data: [], label: []};
 var onlineRate = {data: [], label: []};
@@ -244,7 +246,7 @@ $('#statisticsModal').on('shown.bs.modal', function (e) {
 //======================灭火指挥start by_Dylan ========================
 var commandNodes = [
   {
-    name: '龙泉五台山', open: true, children: [
+    name: '龙泉田家山', open: true, children: [
       {id: 'fire-location', name: '火点定位'},
       {name: '指挥灭火'},
       {name: '案情分析'}]
@@ -274,12 +276,11 @@ $(document).ready(function () {
 var rangerTreeObj;
 var rangerNodes = [
   {
-    name: '四川省(57人)', open: true, children: [
+    name: '四川省(76人)', open: true, children: [
       {
-        name: '成都市(39人)', open: true, children: [
-          {name: '锦江区(2人)'},
+        name: '凉山彝族自治州(34人)', open: true, children: [
           {
-            name: '龙泉驿(5)', open: true, children: [
+            name: '雷波县(5)', open: true, children: [
               {name: '李泽宇'},
               {name: '王世伟'},
               {name: '刁静文'},
@@ -288,11 +289,12 @@ var rangerNodes = [
               {name: '邓志富'},
             ]
           },
-          {name: '金牛区(17)'},
-          {name: '郫都区(7)'},
-          {name: '高新区(8)'}
+          {name: '盐源县(17)'},
+          {name: '越西县(4)'},
+          {name: '金阳县(8)'}
         ]
       },
+      {name: '成都市(23人)'},
       {name: '宜宾市(2人)'},
       {name: '眉山市(5人)'},
       {name: '乐山市(12人)'}]
@@ -355,12 +357,11 @@ var rangermessage = {
 // var rangerTreeObj;
 var rangerNodes = [
   {
-    name: '四川省(57人)', open: true, children: [
+    name: '四川省(76人)', open: true, children: [
       {
-        name: '成都市(39人)', open: true, children: [
-          {name: '锦江区(2人)'},
+        name: '凉山彝族自治州(34人)', open: true, children: [
           {
-            name: '龙泉驿(5)', open: false, children: [
+            name: '雷波县(5)', open: true, children: [
               {name: '李泽宇'},
               {name: '王世伟'},
               {name: '刁静文'},
@@ -369,11 +370,12 @@ var rangerNodes = [
               {name: '邓志富'},
             ]
           },
-          {name: '金牛区(17)'},
-          {name: '郫都区(7)'},
-          {name: '高新区(8)'}
+          {name: '盐源县(17)'},
+          {name: '越西县(4)'},
+          {name: '金阳县(8)'}
         ]
       },
+      {name: '成都市(23人)'},
       {name: '宜宾市(2人)'},
       {name: '眉山市(5人)'},
       {name: '乐山市(12人)'}]
@@ -403,47 +405,3 @@ $(document).ready(function () {
   $('#ranger').hide();
 });
 //======================弹框短信群发护林员树end by_Dylan ==========================
-
-//相机切换
-function checkCamera(type) {
-    let visibleLight = document.getElementById("visibleLight");
-    let infrared = document.getElementById("infrared");
-    let video = document.getElementById("video");
-    let videoParent = document.getElementById("videoParent");
-    if (type==="visibleLight") {
-        visibleLight.checked=true;
-        infrared.checked= false;
-        //移除视频
-        video.parentNode.removeChild(video);
-
-        //添加视频
-        let video1 = document.createElement('video');
-        video1.style.width = '100%';
-        video1.style.height = '100%';
-        video1.autoplay = true;
-        let source = document.createElement('source');
-        source.id="infraredLightVideo";
-        source.src="video/visibleLight.mp4";
-        source.type="video/mp4";
-        video1.appendChild(source);
-        videoParent.appendChild(video1);
-    }else {
-        visibleLight.checked=false;
-        infrared.checked= true;
-        //移除视频
-        video.parentNode.removeChild(video);
-
-        //添加视频
-        let video2 = document.createElement('video');
-        video2.style.width = '100%';
-        video2.style.height = '100%';
-        video2.id = "video";
-        video2.autoplay = true;
-        let source = document.createElement('source');
-        source.id="infraredLightVideo";
-        source.src="video/infrared.mp4";
-        source.type="video/mp4";
-        video2.appendChild(source);
-        videoParent.appendChild(video2);
-    }
-}
